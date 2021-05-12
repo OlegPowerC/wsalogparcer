@@ -1,3 +1,40 @@
+wsalogparcer.exe -s <start time> -e <end time> -u <username or part of the name> -i <IP address> -a <URL> -f <log file>
+
+Time format is: DD/MM/YYYY/HH/MinMin/SS/TimeZone
+Example 23/02/2017/12:32:00/MSK
+
+Username: can be full or part like: alex al or Ale
+
+IP address, full or part: example: 10.111.18.
+
+URL: can be full or part: example: google
+
+Mandatory flag -f log file name (ACL log from Cisco WSA)
+
+Example:
+wsalogparcer.exe -s 01/01/2018/00:00:00/MSK -e 02/07/2018/13:49:59/MSK -u Yulia  -f test.txt
+
+Output:
+Date and time
+IP address
+Request type (GET/POST e.t.c.)
+URL
+Username
+Policy and more detail
+
+Example:
+2018-10-12 17:20:11.000000707 +0300 MSK
+10.111.18.166
+GET
+http://blob.weather.microsoft.com/static/weather4/ru/txw/26.png
+"TESTAD\yulia.ivanova@TESTAD"
+ALLOW_CUSTOMCAT_12-TESTADADPol-TESTADADUSERS-NONE-NONE-NONE-DefaultGroup
+ALLOW_CUSTOMCAT_12
+TESTADADPol
+TESTADADUSERS
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 wsalogparcer.exe -s <врем€ начала поиска> -e <врем€ до которого искать> -u <им€ пользовател€> -i <IP адрес> -a <поиск по URL> -f <лог файл>
 
 ¬рем€ в формате дата/мес€ц/год/часы/минуты/секунды/зона
@@ -5,14 +42,15 @@ wsalogparcer.exe -s <врем€ начала поиска> -e <врем€ до которого искать> -u <им€ 
 
 »м€ пользовател€: можно указывать часть, например alex
 
-IP адрес, можно указывать часть: например 10.0.8.
+IP адрес, можно указывать часть: например 10.111.18.
 
 ѕоиск по URL: можно указать часть строки: например google
 
 ќб€зательный параметр -f им€ файла (ACL лог с Cisco WSA)
 
 ѕример:
-wsalogparcer.exe -s 01/01/2018/00:00:00/MSK -e 02/07/2018/13:49:59/MSK -u kosty -f test.txt
+wsalogparcer.exe -s 01/01/2018/00:00:00/MSK -e 02/07/2018/13:49:59/MSK -u Yulia  -f test.txt
+
 
 ¬ывод:
 ƒата и врем€
@@ -21,3 +59,14 @@ IP адрес
 URL
 »м€ пользовател€
 ѕолитики и прочее
+
+ѕример:
+2018-10-12 17:20:11.000000707 +0300 MSK
+10.111.18.166
+GET
+http://blob.weather.microsoft.com/static/weather4/ru/txw/26.png
+"TESTAD\yulia.ivanova@TESTAD"
+ALLOW_CUSTOMCAT_12-TESTADADPol-TESTADADUSERS-NONE-NONE-NONE-DefaultGroup
+ALLOW_CUSTOMCAT_12
+TESTADADPol
+TESTADADUSERS
